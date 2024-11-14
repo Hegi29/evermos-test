@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
 
-import { BASE_URL } from '@/constants';
+import { BASE_URL, PRODUCT_NOT_FOUND, UNKNOWN_ERROR } from '@/constants';
 import ListProducts from '@/components/ListProducts';
 import Breadcrumb from '@/components/Breadcrumb';
 import styles from '@/styles/ProductDetail.module.scss';
@@ -23,13 +23,13 @@ const ProductDetail = () => {
         try {
             const response = await fetch(`${BASE_URL}/products/${id}`);
             if (!response.ok) {
-                throw new Error('Product not found');
+                throw new Error(PRODUCT_NOT_FOUND);
             }
 
             const data = await response.json();
             setProduct(data);
         } catch (err) {
-            setError(err instanceof Error ? err.message : 'Unknown error');
+            setError(err instanceof Error ? err.message : UNKNOWN_ERROR);
         } finally {
             setLoading(false);
         }
@@ -39,13 +39,13 @@ const ProductDetail = () => {
         try {
             const response = await fetch(`${BASE_URL}/products/category/${category}`);
             if (!response.ok) {
-                throw new Error('Product not found');
+                throw new Error(PRODUCT_NOT_FOUND);
             }
 
             const data = await response.json();
             setListProduct(data);
         } catch (err) {
-            setError(err instanceof Error ? err.message : 'Unknown error');
+            setError(err instanceof Error ? err.message : UNKNOWN_ERROR);
         } finally {
             setLoading(false);
         }
@@ -76,7 +76,7 @@ const ProductDetail = () => {
     }
 
     if (!product) {
-        return <p>Product not found</p>;
+        return <p>{PRODUCT_NOT_FOUND}</p>;
     }
 
     const breadcrumbItems = [

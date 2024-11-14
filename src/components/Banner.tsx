@@ -7,13 +7,13 @@ import Image from 'next/image';
 import bannerImage from '@/assets/images/banner.jpg';
 import logoImage from '@/assets/images/logo.png';
 import namaImage from '@/assets/images/nama.jpg';
-
+import { DEFAULT_INDEX_BANNER } from '@/constants';
 import styles from '@/styles/Banner.module.scss';
 
 const imageSources = [bannerImage, logoImage, namaImage];
 
 const Banner = () => {
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [currentImageIndex, setCurrentImageIndex] = useState(DEFAULT_INDEX_BANNER);
 
     const goToNext = () => {
         setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imageSources.length);

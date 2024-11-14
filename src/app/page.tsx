@@ -6,8 +6,8 @@ import Banner from '@/components/Banner';
 import CategoryList from '@/components/CategoryList';
 import ListProducts from '@/components/ListProducts';
 import { BASE_URL } from '@/constants';
-import { Product } from '@/types';
 import styles from '@/styles/HomePage.module.scss';
+import { Product } from '@/types';
 
 const fetchProducts = async (category?: string): Promise<Product[]> => {
   const url = category
