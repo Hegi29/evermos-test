@@ -1,3 +1,18 @@
+export type BreadcrumbItem = {
+    label: string;
+    link?: string;
+}
+
+export type BreadcrumbProps = {
+    items: BreadcrumbItem[];
+}
+
+export type CategoryListProps = {
+    onCategoryChange: (category: string) => void;
+}
+
+export type Params = { id?: string };
+
 export type Product = {
     id: number;
     title: string;
@@ -7,18 +22,7 @@ export type Product = {
     description: string;
 };
 
-export type Params = { id?: string };
-
 export type ListProductsProps = {
     products: Product[];
     title: string;
 };
-
-export type BreadcrumbItem = {
-    label: string;
-    link?: string;
-}
-
-export type BreadcrumbProps = {
-    items: BreadcrumbItem[];
-}
