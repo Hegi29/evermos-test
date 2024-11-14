@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import logoImage from '../assets/images/nama.jpg';
-import styles from '../styles/Navbar.module.scss';
+import logoImage from '@/assets/images/nama.jpg';
+import styles from '@/styles/Navbar.module.scss';
 
 const Navbar = () => (
     <nav className={styles.navbar}>

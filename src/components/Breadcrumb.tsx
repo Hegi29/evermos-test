@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-import styles from '../styles/Breadcrumb.module.scss';
-import { BreadcrumbProps } from '../types';
+import styles from '@/styles/Breadcrumb.module.scss';
+import { BreadcrumbProps } from '@/types';
 
 const Breadcrumb = ({ items }: BreadcrumbProps) => {
     return (

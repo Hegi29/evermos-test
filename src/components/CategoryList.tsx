@@ -1,22 +1,26 @@
-import styles from '../styles/CategoryList.module.scss';
+'use client';
 
-// ganti jadi get dari API
-const categories = [
-    "All Categories",
-    "Electronics",
-    "Jewelery",
-    "Men's Clothing",
-    "Women's Clothing"
-];
+import { CATEGORIES } from '@/constants';
+import styles from '@/styles/CategoryList.module.scss';
+import { CategoryListProps } from '@/types';
 
-const CategoryList = () => {
+const CategoryList = ({ onCategoryChange }: CategoryListProps) => {
+    const handleCategoryClick = (category: string) => {
+        onCategoryChange(category === 'all categories' ? '' : category);
+    };
+
     return (
         <div className={styles.categoryList}>
             <div className={styles.categoryContainer}>
-                {categories.map((category, index) => (
-                    <div key={index} className={`${styles.categoryBox} ${styles[`categoryColor${index + 1}`]}`}>
+                {CATEGORIES.map((category, index) => (
+                    <button
+                        key={index}
+                        onClick={() => handleCategoryClick(category)}
+                        className={`${styles.categoryBox} ${styles[`categoryColor${index + 1}`]}`}
+                        aria-label={`Filter products by ${category}`}
+                    >
                         {category}
-                    </div>
+                    </button>
                 ))}
             </div>
         </div>

@@ -1,6 +1,6 @@
 import ProductCard from './ProductCard';
-import styles from '../styles/ListProducts.module.scss';
-import { ListProductsProps } from '../types';
+import styles from '@/styles/ListProducts.module.scss';
+import { ListProductsProps } from '@/types';
 
 const ListProducts = ({ products, title }: ListProductsProps) => (
     <section className={styles.featuredProducts}>

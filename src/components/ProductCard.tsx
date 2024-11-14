@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import styles from '../styles/ListProducts.module.scss';
-import { Product } from '../types';
+import styles from '@/styles/ListProducts.module.scss';
+import { Product } from '@/types';
 
 const ProductCard = ({ product }: { product: Product }) => (
     <div key={product.id} className={styles.productCard}>

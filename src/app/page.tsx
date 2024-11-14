@@ -1,23 +1,48 @@
-import Banner from '../components/Banner';
-import CategoryList from '../components/CategoryList';
-import ListProducts from '../components/ListProducts';
-import { BASE_URL } from '../constants';
-import { Product } from '../types';
+'use client';
 
-// Server Side (this happens at the server level before rendering the page)
-const HomePage = async () => {
-  const response = await fetch(`${BASE_URL}/products`, { cache: 'no-store' });
-  if (!response.ok) {
-    return <p>Error fetching products</p>;
-  }
+import { useState, useEffect } from 'react';
 
-  const products: Product[] = await response.json();
+import Banner from '@/components/Banner';
+import CategoryList from '@/components/CategoryList';
+import ListProducts from '@/components/ListProducts';
+import { BASE_URL } from '@/constants';
+import { Product } from '@/types';
+import styles from '@/styles/HomePage.module.scss';
+
+const fetchProducts = async (category?: string): Promise<Product[]> => {
+  const url = category
+    ? `${BASE_URL}/products/category/${category}`
+    : `${BASE_URL}/products`;
+  const response = await fetch(url, { cache: 'no-store' });
+  return response.ok ? response.json() : [];
+}
+
+const HomePage = () => {
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+
+  const handleCategoryChange = async (category: string) => {
+    setLoading(true);
+    const fetchedProducts = await fetchProducts(category);
+    setProducts(fetchedProducts);
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    handleCategoryChange('');
+  }, []);
 
   return (
     <>
       <Banner />
-      <CategoryList />
-      <ListProducts products={products} title='List Products' />
+      <CategoryList onCategoryChange={handleCategoryChange} />
+      {loading ? (
+        <div className={styles.loadingContainer}>
+          <p>Loading Products...</p>
+        </div>
+      ) : (
+        <ListProducts products={products} title="List Products" />
+      )}
     </>
   );
 };

@@ -5,11 +5,11 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
 
-import { BASE_URL } from '../../constants';
-import ListProducts from '../../components/ListProducts';
-import Breadcrumb from '../../components/Breadcrumb';
-import styles from '../../styles/ProductDetail.module.scss';
-import { Params, Product } from '../../types';
+import { BASE_URL } from '@/constants';
+import ListProducts from '@/components/ListProducts';
+import Breadcrumb from '@/components/Breadcrumb';
+import styles from '@/styles/ProductDetail.module.scss';
+import { Params, Product } from '@/types';
 
 const ProductDetail = () => {
     const { id }: Params = useParams();
@@ -19,7 +19,6 @@ const ProductDetail = () => {
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 
-    // Client Side
     const getDetailProduct = async (id: string) => {
         try {
             const response = await fetch(`${BASE_URL}/products/${id}`);

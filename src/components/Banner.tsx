@@ -1,13 +1,14 @@
 "use client";
 
 import { useState } from 'react';
-import Image from 'next/image';
-import styles from '../styles/Banner.module.scss';
 
-// Import images directly
-import bannerImage from '../assets/images/banner.jpg';
-import logoImage from '../assets/images/logo.png';
-import namaImage from '../assets/images/nama.jpg';
+import Image from 'next/image';
+
+import bannerImage from '@/assets/images/banner.jpg';
+import logoImage from '@/assets/images/logo.png';
+import namaImage from '/assets/images/nama.jpg';
+
+import styles from '@/styles/Banner.module.scss';
 
 const imageSources = [bannerImage, logoImage, namaImage];
 
