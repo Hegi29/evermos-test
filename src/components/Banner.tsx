@@ -1,16 +1,15 @@
-"use client"
+"use client";
 
 import { useState } from 'react';
-
 import Image from 'next/image';
-
 import styles from '../styles/Banner.module.scss';
 
-const imageSources = [
-    require('../assets/images/banner.jpg'),
-    require('../assets/images/logo.png'),
-    require('../assets/images/nama.jpg')
-];
+// Import images directly
+import bannerImage from '../assets/images/banner.jpg';
+import logoImage from '../assets/images/logo.png';
+import namaImage from '../assets/images/nama.jpg';
+
+const imageSources = [bannerImage, logoImage, namaImage];
 
 const Banner = () => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
