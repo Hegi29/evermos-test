@@ -1,0 +1,59 @@
+/* Full width container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Navbar: Should span full width */
+.navbar {
+    width: 100%;
+    background-color: #004d40;
+    color: #ffffff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Banner: Should span full width */
+.banner {
+    background-color: #c8e6c9;
+    width: 100%;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Product list section */
+.productList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+    /* Ensure the product list takes full width */
+}
+
+/* Individual product card */
+.productCard {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    width: 150px;
+    text-align: center;
+}
+
+/* Category section */
+.categorySection {
+    width: 100%;
+    padding: 2rem;
+    background-color: #f1f8e9;
+}
+
+/* Footer: Should span full width */
+.footer {
+    background-color: #004d40;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+}
