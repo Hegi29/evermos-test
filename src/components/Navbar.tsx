@@ -20,7 +20,6 @@ const Navbar = () => (
                 />
             </Link>
         </div>
-        <input type="text" placeholder="Find Product" className={styles.searchBar} />
         <div className={styles.actions}>
             <button>Cart</button>
         </div>
