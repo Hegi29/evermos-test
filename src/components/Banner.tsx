@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 import bannerImage from '@/assets/images/banner.jpg';
 import logoImage from '@/assets/images/logo.png';
-import namaImage from '/assets/images/nama.jpg';
+import namaImage from '@/assets/images/nama.jpg';
 
 import styles from '@/styles/Banner.module.scss';
 
