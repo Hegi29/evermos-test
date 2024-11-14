@@ -1,4 +1,3 @@
-// Define color variables
 $background-light: #ffffff;
 $foreground-light: #171717;
 $background-dark: #0a0a0a;
@@ -16,26 +15,25 @@ $foreground-dark: #ededed;
   }
 }
 
-// Ensure the HTML and body fill the entire viewport
 html,
 body {
-  height: 100%; // Ensure the page takes full height
-  margin: 0; // Remove default margin
-  padding: 0; // Remove default padding
-  max-width: 100vw; // Prevent horizontal scrolling
-  overflow-x: hidden; // Hide horizontal scrollbar
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 body {
   color: $background-dark; //var(--foreground);
-  background: $background-light; //var(--background); // Default background is light
+  background: $background-light; //var(--background);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;
   flex-direction: column;
-  justify-content: center; // Optionally center content vertically
-  align-items: center; // Optionally center content horizontally
+  justify-content: center;
+  align-items: center;
 }
 
 * {
@@ -44,14 +42,10 @@ body {
   margin: 0;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-footer {
-  grid-row: 2; // Place footer in the second row (always at the bottom)
-}
+// a {
+//   color: inherit;
+//   text-decoration: none;
+// }
 
 @media (prefers-color-scheme: dark) {
   html {
