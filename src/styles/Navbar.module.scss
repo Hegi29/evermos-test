@@ -15,20 +15,6 @@
     position: relative;
 }
 
-.cartButton {
-    position: relative;
-    background-color: #0070f3;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-
-    &:hover {
-        background-color: #005bb5;
-    }
-}
-
 .badge {
     position: absolute;
     top: -5px;
@@ -43,4 +29,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.grey1 {
+    color: #d3d3d3;
+    font-weight: bold;
+}
+
+.grey2 {
+    color: #a9a9a9;
+    font-weight: bold;
+}
+
+.grey3 {
+    color: #000;
+    font-weight: bold;
 }

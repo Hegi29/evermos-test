@@ -3,6 +3,7 @@
     display: flex;
     justify-content: center;
     position: relative;
+    margin-top: 20px;
 }
 
 .controls {
@@ -26,7 +27,7 @@
 
 .prevButton,
 .nextButton {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: transparent;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -37,7 +38,7 @@
 
 .prevButton:hover,
 .nextButton:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: transparent;
 }
 
 .prevButton {
