@@ -27,6 +27,8 @@ const ProductDetail = () => {
             return;
         }
 
+        alert('Product added to cart');
+
         dispatch(
             addToCart({
                 id: product.id,

@@ -45,14 +45,14 @@ const CartPage = () => {
                                         width={120}
                                         height={120}
                                         style={{
-                                            objectFit: 'cover',
+                                            objectFit: 'contain',
                                             objectPosition: 'center',
                                         }}
                                         priority
                                     />
                                 </div>
                                 <div className={styles.productInfo}>
-                                    <h3>{product.title}</h3>
+                                    <h4>{product.title}</h4>
                                 </div>
                                 <div className={styles.productPrice}>${product.price}</div>
                                 <button onClick={() => dispatch(removeFromCart(product.id))} className={styles.removeButton}>
