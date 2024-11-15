@@ -4,20 +4,41 @@ import { useEffect, useState } from 'react';
 
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
+import { useDispatch } from 'react-redux';
 
 import { BASE_URL, PRODUCT_NOT_FOUND, UNKNOWN_ERROR } from '@/constants';
 import ListProducts from '@/components/ListProducts';
 import Breadcrumb from '@/components/Breadcrumb';
 import styles from '@/styles/ProductDetail.module.scss';
+import { addToCart } from '@/store/slices/cartSlice';
 import { Params, Product } from '@/types';
 
 const ProductDetail = () => {
     const { id }: Params = useParams();
+    const dispatch = useDispatch();
 
     const [product, setProduct] = useState<Product | null>(null);
     const [listProduct, setListProduct] = useState<Product[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
+
+    const handleAddToCart = () => {
+        if (!product) {
+            return;
+        }
+
+        dispatch(
+            addToCart({
+                id: product.id,
+                title: product.title,
+                price: product.price,
+                quantity: 1,
+                category: product.category,
+                image: product.image,
+                description: product.description
+            })
+        );
+    };
 
     const getDetailProduct = async (id: string) => {
         try {
@@ -110,7 +131,7 @@ const ProductDetail = () => {
                             <span className={styles.freeShipping}>Free Shipping</span>
                         </div>
                         <p className={styles.productDescription}>{product.description}</p>
-                        <button className={styles.productButton}>Add to Cart</button>
+                        <button className={styles.productButton} onClick={handleAddToCart}>Add to Cart</button>
                     </div>
                 </div>
             </section>

@@ -1,0 +1,140 @@
+.cartPage {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+
+    &.emptyCart {
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    h1 {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        text-align: center;
+        color: #333;
+    }
+
+    p {
+        font-size: 18px;
+        color: #555;
+        text-align: center;
+    }
+}
+
+.cartList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    .cartHeader {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr auto;
+        font-weight: bold;
+        text-align: center;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #ddd;
+    }
+}
+
+.cartItem {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr auto;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 10px;
+    margin-top: 10px;
+
+    .productImageContainer {
+        display: flex;
+        justify-content: center;
+    }
+
+    .productImage {
+        border-radius: 8px;
+    }
+
+    .productInfo {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .productPrice,
+    .productQuantity,
+    .productSubtotal {
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .productQuantity button {
+        margin: 0 5px;
+        padding: 5px 10px;
+    }
+
+    .removeButton {
+        background: none;
+        border: none;
+        color: #d9534f;
+        font-size: 18px;
+        cursor: pointer;
+    }
+}
+
+.cartSummary {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    padding: 20px 0;
+}
+
+
+.cartButtons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+
+    .updateCartButton,
+    .continueShoppingButton,
+    .checkoutButton {
+        padding: 10px 20px;
+        font-size: 18px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    .updateCartButton {
+        background-color: #f1f1f1;
+        border: 1px solid #ddd;
+    }
+
+    .continueShoppingButton {
+        background-color: #f1f1f1;
+        border: 1px solid #ddd;
+    }
+
+    .checkoutButton {
+        background-color: #0070f3;
+        color: #fff;
+        border: none;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: #005bb5;
+        }
+    }
+}
